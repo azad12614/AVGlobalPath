@@ -3,730 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="pageTitle">AV Global Path - Empowering Futures</title>
+    <title>AV GLOBAL PATH - Connecting Global Trade Seamlessly</title>
+
+    <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      /* --- Branding & Typography --- */
-      :root {
-        --primary-color: #004d00; /* Dark Green */
-        --secondary-color: #ffd700; /* Dark Yellow/Gold */
-        --text-color: #333;
-        --light-bg: #f4f7f6;
-        --white: #ffffff;
-        --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        --radius: 10px;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Arial", sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--white);
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      section {
-        padding: 80px 0;
-      }
-
-      h2 {
-        text-align: center;
-        font-size: 2.5em;
-        color: var(--primary-color);
-        margin-bottom: 40px;
-        position: relative;
-        padding-bottom: 15px;
-      }
-      h2::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: var(--secondary-color);
-        border-radius: 2px;
-      }
-      h2 span {
-        color: var(--secondary-color);
-      }
-
-      /* --- Header & Navigation --- */
-      header {
-        background-color: var(--white);
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 85px;
-      }
-
-      .logo-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: var(--primary-color);
-      }
-      .logo-container img {
-        height: 55px;
-        margin-right: 15px;
-      }
-
-      .nav-links {
-        list-style: none;
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-color);
-        padding: 10px 15px;
-        transition: color 0.3s;
-        font-weight: 600;
-      }
-
-      .nav-links a:hover {
-        color: var(--secondary-color);
-      }
-
-      /* Language Switch Button */
-      #lang-switch {
-        background-color: var(--primary-color);
-        color: var(--white);
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-left: 20px;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
-      #lang-switch:hover {
-        background-color: #006600; /* Lighter Green */
-      }
-
-      /* --- Hero Section with Banner --- */
-      #hero {
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: auto;
-      }
-      #hero img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* --- Services & Destinations Section --- */
-      #services,
-      #destinations,
-      #av-tech {
-        background-color: var(--light-bg);
-      }
-
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        text-align: center;
-      }
-      .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .service-card,
-      .destination-card,
-      .product-card {
-        background: var(--white);
-        padding: 30px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        transition: all 0.3s;
-        border-bottom: 4px solid var(--primary-color);
-      }
-
-      .service-card:hover,
-      .destination-card:hover,
-      .product-card:hover {
-        transform: translateY(-5px);
-        border-bottom-color: var(--secondary-color);
-      }
-
-      .service-card h3,
-      .destination-card h3,
-      .product-card h3 {
-        color: var(--primary-color);
-        margin-bottom: 15px;
-        font-size: 1.4em;
-      }
-
-      .service-card .icon-circle {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        font-size: 1.5em;
-        transition: background-color 0.3s;
-      }
-      .service-card:hover .icon-circle {
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
-      }
-
-      /* --- CTA Button General Style --- */
-      .cta-button {
-        display: inline-block;
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        padding: 12px 30px;
-        text-decoration: none;
-        border-radius: 50px;
-        font-size: 1.2em;
-        font-weight: bold;
-        transition: all 0.3s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      }
-      .cta-button:hover {
-        background-color: #ccac00; /* Darker yellow */
-        transform: translateY(-2px);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-      }
-
-      .center-cta {
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      /* --- Why Choose Us Section --- */
-      #why-choose-us {
-        background-color: var(--white);
-      }
-
-      .feature-list {
-        list-style: none;
-        padding: 0;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .feature-list li {
-        background: var(--light-bg);
-        margin-bottom: 15px;
-        padding: 20px;
-        border-left: 5px solid var(--secondary-color);
-        border-radius: var(--radius);
-        font-weight: 500;
-        text-align: left;
-        transition: background-color 0.3s;
-      }
-      .feature-list li:hover {
-        background-color: #e0e4e3;
-      }
-      .feature-list li strong {
-        color: var(--primary-color);
-        font-weight: 700;
-      }
-
-      /* --- AV Tech Products Section --- */
-      #av-tech .product-card {
-        border: 1px solid #ddd;
-        border-bottom: 4px solid var(--primary-color);
-      }
-      #av-tech .product-card a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-        display: block;
-        margin-top: 15px;
-        transition: color 0.3s;
-      }
-      #av-tech .product-card a:hover {
-        color: var(--secondary-color);
-        text-decoration: underline;
-      }
-
-      /* --- Contact Section --- */
-      #contact {
-        background-color: var(--white);
-      }
-      #contact .content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 40px;
-      }
-
-      .contact-info-block {
-        flex-basis: 48%;
-        min-width: 300px;
-        background: var(--light-bg);
-        padding: 30px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .contact-info-block h3 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        font-size: 1.5em;
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 10px;
-      }
-
-      .contact-details p {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
-      .contact-details i {
-        color: var(--secondary-color);
-        margin-right: 10px;
-        font-size: 1.1em;
-      }
-
-      .social-links {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        margin-top: 15px;
-        justify-content: center;
-      }
-
-      .social-links a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: color 0.3s;
-      }
-      .social-links a i {
-        font-size: 1.5em;
-        margin-right: 10px;
-      }
-      .social-links a:hover {
-        color: var(--secondary-color);
-      }
-
-      /* --- Footer --- */
-      footer {
-        background-color: var(--primary-color);
-        color: var(--white);
-        text-align: center;
-        padding: 20px 0;
-        font-size: 0.9em;
-      }
-
-      /* --- Go To Top Button --- */
-      #go-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5em;
-        line-height: 50px;
-        text-align: center;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        display: none; /* Hidden by default */
-        z-index: 999;
-        transition: background-color 0.3s;
-      }
-      #go-to-top:hover {
-        background-color: #ccac00;
-      }
-
-      /* --- Language Classes (Hidden by default or toggled) --- */
-      .bangla {
-        display: none;
-        font-family: "Arial", sans-serif; /* Fallback for Bengali */
-      }
-
-      /* --- Media Queries (Responsiveness) --- */
-      @media (max-width: 992px) {
-        .grid-3 {
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        .grid-2 {
-          grid-template-columns: 1fr;
-          max-width: 600px;
-        }
-        .contact-info-block {
-          flex-basis: 100%;
-          min-width: unset;
-          text-align: center;
-        }
-        .contact-details p {
-          justify-content: center;
-        }
-      }
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-        nav {
-          justify-content: space-between;
-          padding: 0 15px;
-        }
-        #lang-switch {
-          margin: 0;
-        }
-        h2 {
-          font-size: 2em;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
       <div class="container">
         <nav>
-          <a href="#hero" class="logo-container">
+          <a href="#hero" class="logo">
             <img src="./logo.jpg" alt="AV Global Path Logo" />
           </a>
+
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+
           <ul class="nav-links">
-            <li>
-              <a href="#services" class="en">Services</a
-              ><a href="#services" class="bangla">সেবা</a>
-            </li>
-            <li>
-              <a href="#destinations" class="en">Destinations</a
-              ><a href="#destinations" class="bangla">গন্তব্য</a>
-            </li>
-            <li>
-              <a href="#why-choose-us" class="en">Why Us</a
-              ><a href="#why-choose-us" class="bangla">কেন আমরা</a>
-            </li>
-            <li>
-              <a href="#contact" class="en">Contact</a
-              ><a href="#contact" class="bangla">যোগাযোগ</a>
-            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#commodities">Deals In</a></li>
+            <li><a href="#reach">Reach</a></li>
+            <li><a href="#why-choose-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-          <button id="lang-switch">বাংলা / EN</button>
         </nav>
       </div>
     </header>
 
     <section id="hero">
-      <img src="./banner.jpg" alt="AV Global Path Study Abroad Banner" />
+      <div class="container hero-content">
+        <h1>AV GLOBAL PATH</h1>
+        <p>Connecting Global Trade Seamlessly</p>
+        <a href="#contact" class="cta-button">Get a Quote Today</a>
+      </div>
     </section>
 
-    <section id="services">
+    <section id="about">
       <div class="container">
-        <h2 class="en">Our Comprehensive <span>Services</span></h2>
-        <h2 class="bangla">আমাদের সমন্বিত <span>সেবাসমূহ</span></h2>
-        <div class="grid-3">
-          <div class="service-card">
-            <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
-            <h3 class="en">University Admissions</h3>
-            <h3 class="bangla">বিশ্ববিদ্যালয়ে ভর্তি</h3>
-            <p class="en">
-              Personalized counseling to match your academic interests with the
-              best global universities.
-            </p>
-            <p class="bangla">
-              সেরা বৈশ্বিক বিশ্ববিদ্যালয়ের সাথে আপনার শিক্ষাগত আগ্রহ মেলাতে
-              ব্যক্তিগত পরামর্শ।
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="icon-circle"><i class="fas fa-passport"></i></div>
-            <h3 class="en">Visa Processing Support</h3>
-            <h3 class="bangla">ভিসা প্রক্রিয়াকরণ সহায়তা</h3>
-            <p class="en">
-              End-to-end guidance and assistance with securing your student visa
-              for a smooth transition.
-            </p>
-            <p class="bangla">
-              সহজ স্থানান্তরের জন্য আপনার স্টুডেন্ট ভিসা সুরক্ষিত করতে শুরু থেকে
-              শেষ পর্যন্ত সহায়তা।
+        <h2>About <span>Us</span></h2>
+        <p>
+          <strong style="color: #004d00">AV GLOBAL PATH</strong> is a
+          <b>global brokerage firm</b> facilitating the
+          <b
+            >international trade of high-demand commodities and essential
+            equipment</b
+          >. We act as a trusted intermediary, leveraging our vast global
+          network to secure competitive deals and ensure smooth, end-to-end
+          logistics for our clients worldwide.
+        </p>
+      </div>
+    </section>
+
+    <section id="commodities">
+      <div class="container">
+        <h2>What We <span>Deal In</span></h2>
+        <div class="commodity-grid">
+          <div class="commodity-item">
+            <i class="fas fa-mountain"></i>
+            <h3>Mines & Coals</h3>
+            <p>
+              Sourcing high-quality mining materials and industrial coal for
+              energy and manufacturing sectors.
             </p>
           </div>
-          <div class="service-card">
-            <div class="icon-circle">
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <h3 class="en">Scholarship Assistance</h3>
-            <h3 class="bangla">বৃত্তি সহায়তা</h3>
-            <p class="en">
-              Helping you find scholarships and financial aid to make your study
-              abroad dream affordable.
-            </p>
-            <p class="bangla">
-              আপনার বিদেশে অধ্যয়নের স্বপ্নকে সাশ্রয়ী করতে বৃত্তি এবং আর্থিক
-              সহায়তা খুঁজে পেতে সাহায্য করা।
+          <div class="commodity-item">
+            <i class="fas fa-seedling"></i>
+            <h3>Fertilizers</h3>
+            <p>
+              Global supply chain management for various agricultural
+              fertilizers to support crop growth.
             </p>
           </div>
-          <div class="service-card">
-            <div class="icon-circle">
-              <i class="fas fa-suitcase-rolling"></i>
-            </div>
-            <h3 class="en">Pre-Departure Briefing</h3>
-            <h3 class="bangla">যাত্রার আগে ব্রিফিং</h3>
-            <p class="en">
-              Essential information and orientation to prepare you for life and
-              study in your new country.
-            </p>
-            <p class="bangla">
-              আপনার নতুন দেশে জীবন এবং অধ্যয়নের জন্য প্রস্তুত করতে প্রয়োজনীয়
-              তথ্য এবং পরিচিতি।
+          <div class="commodity-item">
+            <i class="fas fa-oil-can"></i>
+            <h3>Oil & Gas</h3>
+            <p>
+              Brokering crude oil, refined petroleum products, and natural gas
+              transactions globally.
             </p>
           </div>
-          <div class="service-card">
-            <div class="icon-circle"><i class="fas fa-book-open"></i></div>
-            <h3 class="en">Course Selection</h3>
-            <h3 class="bangla">কোর্স নির্বাচন</h3>
-            <p class="en">
-              Expert advice on choosing the right program and university that
-              aligns with your career goals.
-            </p>
-            <p class="bangla">
-              আপনার ক্যারিয়ারের লক্ষ্যের সাথে সামঞ্জস্যপূর্ণ সঠিক প্রোগ্রাম এবং
-              বিশ্ববিদ্যালয় বেছে নিতে বিশেষজ্ঞের পরামর্শ।
+          <div class="commodity-item">
+            <i class="fas fa-warehouse"></i>
+            <h3>Grains (Rice, Wheat, Corn, etc.)</h3>
+            <p>
+              Large-scale international trade of staple food grains, ensuring
+              food security and supply.
             </p>
           </div>
-          <div class="service-card">
-            <div class="icon-circle"><i class="fas fa-file-alt"></i></div>
-            <h3 class="en">Documentation</h3>
-            <h3 class="bangla">নথিপত্র প্রস্তুত</h3>
-            <p class="en">
-              Handling all application and necessary paperwork for a hassle-free
-              admission process.
-            </p>
-            <p class="bangla">
-              একটি ঝামেলা-মুক্ত ভর্তি প্রক্রিয়ার জন্য সমস্ত আবেদন এবং
-              প্রয়োজনীয় নথিপত্র পরিচালনা।
+          <div class="commodity-item">
+            <i class="fas fa-medkit"></i>
+            <h3>Medical Equipment</h3>
+            <p>
+              Facilitating the trade of essential hospital supplies, advanced
+              diagnostics, and surgical equipment.
             </p>
           </div>
-        </div>
-        <div class="center-cta">
-          <a href="#contact" class="cta-button en"
-            ><i class="fas fa-hand-point-right"></i> Start Your Application
-            Now</a
-          >
-          <a href="#contact" class="cta-button bangla"
-            ><i class="fas fa-hand-point-right"></i> এখনই আপনার আবেদন শুরু
-            করুন</a
-          >
         </div>
       </div>
     </section>
 
-    <section id="destinations">
+    <section id="reach">
       <div class="container">
-        <h2 class="en">Popular Study <span>Destinations</span></h2>
-        <h2 class="bangla">জনপ্রিয় অধ্যয়নের <span>গন্তব্য</span></h2>
-        <div class="grid-3">
-          <div class="destination-card">
-            <h3 class="en">Malaysia</h3>
-            <h3 class="bangla">মালয়েশিয়া</h3>
-            <p class="en">
-              A hub for affordable, high-quality education and multicultural
-              student life.
-            </p>
-            <p class="bangla">
-              সাশ্রয়ী, উচ্চ-মানের শিক্ষা এবং বহুসাংস্কৃতিক ছাত্রজীবনের একটি
-              কেন্দ্র।
-            </p>
-          </div>
-          <div class="destination-card">
-            <h3 class="en">South Korea</h3>
-            <h3 class="bangla">দক্ষিণ কোরিয়া</h3>
-            <p class="en">
-              Study at top universities in a country renowned for technology and
-              innovation.
-            </p>
-            <p class="bangla">
-              প্রযুক্তি ও উদ্ভাবনের জন্য বিখ্যাত একটি দেশে শীর্ষ
-              বিশ্ববিদ্যালয়গুলিতে অধ্যয়ন করুন।
-            </p>
-          </div>
-          <div class="destination-card">
-            <h3 class="en">Cyprus</h3>
-            <h3 class="bangla">সাইপ্রাস</h3>
-            <p class="en">
-              Gateway to Europe with internationally recognized degrees and a
-              safe environment.
-            </p>
-            <p class="bangla">
-              আন্তর্জাতিকভাবে স্বীকৃত ডিগ্রী এবং একটি নিরাপদ পরিবেশ সহ ইউরোপের
-              প্রবেশদ্বার।
-            </p>
-          </div>
-          <div class="destination-card">
-            <h3 class="en">Hungary</h3>
-            <h3 class="bangla">হাঙ্গেরি</h3>
-            <p class="en">
-              High-quality European education with world-class institutions and
-              a low cost of living.
-            </p>
-            <p class="bangla">
-              বিশ্বমানের প্রতিষ্ঠান এবং কম খরচে উচ্চমানের ইউরোপীয় শিক্ষা।
-            </p>
-          </div>
-          <div class="destination-card">
-            <h3 class="en">Australia</h3>
-            <h3 class="bangla">অস্ট্রেলিয়া</h3>
-            <p class="en">
-              Access to world-class education, post-study work rights, and
-              diverse career opportunities.
-            </p>
-            <p class="bangla">
-              বিশ্বমানের শিক্ষা, অধ্যয়নের পরে কাজের অধিকার এবং বিভিন্ন
-              ক্যারিয়ারের সুযোগ।
-            </p>
-          </div>
-          <div class="destination-card">
-            <h3 class="en">Europe (General)</h3>
-            <h3 class="bangla">ইউরোপ (সাধারণ)</h3>
-            <p class="en">
-              Assistance for various European countries offering global
-              admissions pathways.
-            </p>
-            <p class="bangla">
-              বিভিন্ন ইউরোপীয় দেশের জন্য সহায়তা যা বৈশ্বিক ভর্তির পথ সরবরাহ
-              করে।
-            </p>
-          </div>
-        </div>
+        <h2>Global Sourcing <span>Network</span></h2>
+        <p>
+          Our dedicated network allows us to source and deliver products
+          efficiently across these key international markets:
+        </p>
+        <ul class="country-list">
+          <li>Bangladesh</li>
+          <li>South Korea</li>
+          <li>The Middle East</li>
+          <li>India</li>
+          <li>Bhutan</li>
+          <li>Nepal</li>
+          <li>South Africa</li>
+        </ul>
       </div>
     </section>
 
     <section id="why-choose-us">
       <div class="container">
-        <h2 class="en">Why Choose <span>AV Global Path?</span></h2>
-        <h2 class="bangla">কেন বেছে নেবেন <span>এভি গ্লোবাল পাথ?</span></h2>
-        <p style="text-align: center; margin-bottom: 40px; font-style: italic">
-          <span class="en"
-            >Our mission is to simplify your journey, ensuring you navigate the
-            path to global education with confidence and ease.</span
-          >
-          <span class="bangla"
-            >আমাদের লক্ষ্য হলো আপনার যাত্রাকে সহজ করা, নিশ্চিত করা যে আপনি
-            আত্মবিশ্বাস এবং স্বাচ্ছন্দ্যের সাথে বিশ্বব্যাপী শিক্ষার পথে এগিয়ে
-            যেতে পারেন।</span
-          >
-        </p>
-        <ul class="feature-list">
-          <li class="en">
-            <strong>Trusted Partnership:</strong> Global connections with
-            prestigious universities in Malaysia, Korea, Cyprus, and beyond.
-          </li>
-          <li class="bangla">
-            <strong>বিশ্বস্ত অংশীদারিত্ব:</strong> মালয়েশিয়া, কোরিয়া,
-            সাইপ্রাস এবং অন্যান্য দেশে মর্যাদাপূর্ণ বিশ্ববিদ্যালয়গুলির সাথে
-            বৈশ্বিক সংযোগ।
-          </li>
-          <li class="en">
-            <strong>End-to-End Support:</strong> We guide you from course
-            selection to visa processing and pre-departure.
-          </li>
-          <li class="bangla">
-            <strong>শুরু থেকে শেষ পর্যন্ত সহায়তা:</strong> কোর্স নির্বাচন থেকে
-            ভিসা প্রক্রিয়াকরণ এবং যাত্রার পূর্ববর্তী পর্যন্ত আমরা আপনাকে গাইড
-            করি।
-          </li>
-          <li class="en">
-            <strong>Affordable Solutions:</strong> Dedicated assistance in
-            finding scholarships and financial aid opportunities.
-          </li>
-          <li class="bangla">
-            <strong>সাশ্রয়ী সমাধান:</strong> বৃত্তি এবং আর্থিক সহায়তার সুযোগ
-            খুঁজে পেতে নিবেদিত সহায়তা।
-          </li>
-          <li class="en">
-            <strong>Experienced Counselors:</strong> Our team offers
-            personalized guidance to match your career and academic goals.
-          </li>
-          <li class="bangla">
-            <strong>অভিজ্ঞ পরামর্শদাতা:</strong> আমাদের দল আপনার কর্মজীবন এবং
-            একাডেমিক লক্ষ্যগুলির সাথে মেলাতে ব্যক্তিগত পরামর্শ প্রদান করে।
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="av-tech">
-      <div class="container">
-        <h2 class="en">AV Technology & <span>Ventures</span></h2>
-        <h2 class="bangla">এভি প্রযুক্তি এবং <span>ভেঞ্চারস</span></h2>
-        <p style="text-align: center; margin-bottom: 30px" class="en">
-          Beyond education consulting, our venture extends to providing
-          reliable, high-quality technology products under the
-          <strong>AV</strong> brand.
-        </p>
-        <p style="text-align: center; margin-bottom: 30px" class="bangla">
-          শিক্ষা পরামর্শের বাইরে, আমাদের উদ্যোগ <strong>এভি</strong> ব্র্যান্ডের
-          অধীনে নির্ভরযোগ্য, উচ্চ-মানের প্রযুক্তি পণ্য সরবরাহ পর্যন্ত বিস্তৃত।
-        </p>
-        <div class="grid-3">
-          <div class="product-card">
-            <h3>AV Abacus All-in-One PCs</h3>
+        <h2>Why Partner <span>With Us?</span></h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <i class="fas fa-globe-americas"></i>
+            <h3>Trusted Global Network</h3>
             <p>
-              Sleek design with formidable performance for home and business
-              computing needs.
+              Leveraging deep connections with reliable suppliers and buyers
+              worldwide for optimal transactions.
             </p>
-            <a href="https://www.youtube.com/@AbdullahVentures" target="_blank"
-              ><i class="fab fa-youtube"></i> See Products</a
-            >
           </div>
-          <div class="product-card">
-            <h3>AV LOG Series Laptops</h3>
+          <div class="feature-card">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>Transparent Brokerage Process</h3>
             <p>
-              Redefining possibilities in laptop technology with power,
-              performance, and portability.
+              Clear, honest communication and documentation at every stage of
+              the trade cycle.
             </p>
-            <a href="https://av-eduniya.blogspot.com/" target="_blank"
-              ><i class="fas fa-external-link-alt"></i> Read More on Blog</a
-            >
           </div>
-          <div class="product-card">
-            <h3>Flash Drives & Peripherals</h3>
+          <div class="feature-card">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Fast Sourcing & Logistics</h3>
             <p>
-              Speed, style, and storage excellence in USB memory devices and
-              other computer accessories.
+              Efficient coordination of movement, inspection, and delivery,
+              minimizing lead times and risk.
             </p>
-            <a href="https://www.facebook.com/avtravel763/" target="_blank"
-              ><i class="fab fa-facebook"></i> View on Facebook</a
-            >
           </div>
         </div>
       </div>
@@ -734,66 +160,37 @@
 
     <section id="contact">
       <div class="container">
-        <h2 class="en">Get In <span>Touch</span></h2>
-        <h2 class="bangla">যোগাযোগ <span>করুন</span></h2>
-        <div class="content">
-          <div class="contact-info-block">
-            <h3 class="en">Office Details</h3>
-            <h3 class="bangla">অফিসের বিবরণ</h3>
-            <div class="contact-details">
-              <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="en"
-                  >RH Home Centre 342 no, 4th floor Green Road, Dhaka-1215</span
-                ><span class="bangla"
-                  >আরএইচ হোম সেন্টার ৩৪২ নং, ৪ তলা গ্রিন রোড, ঢাকা-১২১৫</span
-                >
-              </p>
-              <p>
-                <i class="fas fa-envelope"></i>
-                <span>globalpath@abdullahventures.com</span>
-              </p>
-              <p>
-                <i class="fas fa-phone-alt"></i>
-                <span>+880 1896-318092</span>
-              </p>
-              <p>
-                <i class="fas fa-globe"></i>
-                <span>www.globalpath.abdullahventures.com</span>
-              </p>
-            </div>
+        <h2>Contact <span>Us</span></h2>
+        <div class="contact-content">
+          <div class="contact-details">
+            <h3>Direct Contact</h3>
+            <p>
+              <i class="fas fa-envelope"></i> Email:
+              globalpath@abdullahventures.com
+            </p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: +880 1896-318092</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Office: Suite-342, Level-3,
+              R H Home Centre, Green Road, Dhaka, Bangladesh
+            </p>
           </div>
-
-          <div class="contact-info-block">
-            <h3 class="en">Follow Us</h3>
-            <h3 class="bangla">আমাদের অনুসরণ করুন</h3>
-            <div>
-              <p class="en">
-                Stay connected with us for the latest admission news and
-                updates!
-              </p>
-              <p class="bangla">
-                সর্বশেষ ভর্তি খবর এবং আপডেটের জন্য আমাদের সাথে সংযুক্ত থাকুন!
-              </p>
-              <div class="social-links">
-                <a href="https://www.facebook.com/avtravel763/" target="_blank"
-                  ><i class="fab fa-facebook-f"></i> Facebook</a
-                >
-                <a
-                  href="https://bd.linkedin.com/company/av-global-path"
-                  target="_blank"
-                  ><i class="fab fa-linkedin-in"></i> LinkedIn</a
-                >
-                <a
-                  href="https://www.youtube.com/@AbdullahVentures"
-                  target="_blank"
-                  ><i class="fab fa-youtube"></i> YouTube</a
-                >
-                <a href="https://av-eduniya.blogspot.com/" target="_blank"
-                  ><i class="fab fa-blogger-b"></i> Blog</a
-                >
-              </div>
-            </div>
+          <div class="contact-form-container">
+            <h3>Send a Quick Inquiry</h3>
+            <form class="contact-form" id="contactForm">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <input
+                type="text"
+                placeholder="Subject (e.g., Coal Inquiry)"
+                required
+              />
+              <textarea
+                rows="5"
+                placeholder="Your Message / Requirement Details"
+                required
+              ></textarea>
+              <button type="submit" class="cta-button">Submit Inquiry</button>
+            </form>
           </div>
         </div>
       </div>
@@ -801,78 +198,14 @@
 
     <footer>
       <div class="container">
-        &copy; 2025 AV Global Path. All rights reserved. |
-        <span class="en">Privacy Policy</span
-        ><span class="bangla">গোপনীয়তা নীতি</span>
+        &copy; 2025 AV GLOBAL PATH. All Rights Reserved.
       </div>
     </footer>
 
-    <button onclick="topFunction()" id="go-to-top" title="Go to top">
+    <button id="go-to-top" title="Go to top">
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-      // --- Language Toggle Script ---
-      const langSwitch = document.getElementById("lang-switch");
-      let currentLang = "en";
-
-      // Set initial state
-      document
-        .querySelectorAll(".bangla")
-        .forEach((el) => (el.style.display = "none"));
-      document.getElementById("pageTitle").textContent =
-        "AV Global Path - Empowering Futures";
-
-      langSwitch.addEventListener("click", () => {
-        if (currentLang === "en") {
-          // Switch to Bangla
-          document
-            .querySelectorAll(".en")
-            .forEach((el) => (el.style.display = "none"));
-          document
-            .querySelectorAll(".bangla")
-            .forEach((el) => (el.style.display = "inline-block"));
-          document.getElementById("pageTitle").textContent =
-            "এভি গ্লোবাল পাথ - আপনার ভবিষ্যৎ শক্তিশালী করুন";
-          currentLang = "bn";
-        } else {
-          // Switch to English
-          document
-            .querySelectorAll(".bangla")
-            .forEach((el) => (el.style.display = "none"));
-          document
-            .querySelectorAll(".en")
-            .forEach((el) => (el.style.display = "inline-block"));
-          document.getElementById("pageTitle").textContent =
-            "AV Global Path - Empowering Futures";
-          currentLang = "en";
-        }
-      });
-
-      // --- Go To Top Button Script ---
-      const topButton = document.getElementById("go-to-top");
-
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function () {
-        scrollFunction();
-      };
-
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          topButton.style.display = "block";
-        } else {
-          topButton.style.display = "none";
-        }
-      }
-
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

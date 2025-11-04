@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // 2. Define the recipient and build the mailto parameters
-      const recipient = "azad.jishan2003@gmail.com";
+      const recipient = " ";
 
       // Construct the Subject line: Combine form subject with sender info
       const finalSubject = encodeURIComponent(

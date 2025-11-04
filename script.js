@@ -99,35 +99,65 @@ function displayFormMessage(message, isSuccess = true) {
   }, 5000);
 }
 
-function handleContactFormSubmit(event) {
-  event.preventDefault(); // Stop default form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
 
-  // In a real application, you would send this data to a server here.
-  // We simulate a successful send after a small delay.
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Stop the form's default mailto action for a moment
 
-  const form = event.target;
-  const submitButton = form.querySelector('button[type="submit"]');
+      // 1. Get the values from the form inputs using the new 'name' attributes
+      const name = contactForm.querySelector('[name="name"]').value.trim();
+      const email = contactForm.querySelector('[name="email"]').value.trim();
+      const subject = contactForm
+        .querySelector('[name="subject"]')
+        .value.trim();
+      const message = contactForm
+        .querySelector('[name="message"]')
+        .value.trim();
 
-  submitButton.disabled = true;
-  submitButton.textContent = "Sending...";
+      // Simple client-side validation check
+      if (!name || !email || !subject || !message) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
-  // Simulate a network request
-  setTimeout(() => {
-    // Show success message
-    displayFormMessage(
-      "Thank you! Your message has been sent successfully. We will respond shortly.",
-      true
-    );
+      // 2. Define the recipient and build the mailto parameters
+      const recipient = "azad.jishan2003@gmail.com";
 
-    // Clear the form fields
-    form.reset();
+      // Construct the Subject line: Combine form subject with sender info
+      const finalSubject = encodeURIComponent(
+        `Inquiry: ${subject} (${name} - ${email})`
+      );
 
-    // Re-enable button
-    submitButton.disabled = false;
-    submitButton.textContent = "Send Message";
-  }, 1500); // 1.5 second delay to simulate sending
-}
+      // Construct the Body: Format the message content neatly
+      const finalBody = encodeURIComponent(
+        "Name: " +
+          name +
+          "\n" +
+          "Email: " +
+          email +
+          "\n\n" +
+          "Subject: " +
+          subject +
+          "\n\n" +
+          "Message:\n" +
+          message
+      );
 
-if (contactForm) {
-  contactForm.addEventListener("submit", handleContactFormSubmit);
-}
+      // 3. Create the final mailto link
+      const mailtoLink = `mailto:${recipient}?subject=${finalSubject}&body=${finalBody}`;
+
+      // 4. Redirect the user to the generated mailto link
+      // This will open their default email client (Outlook, Gmail in a tab, etc.)
+      window.location.href = mailtoLink;
+
+      // Optional: Clear the form after a slight delay
+      // This prevents the user from accidentally sending the same data again
+      // if they quickly return to the page.
+      setTimeout(() => {
+        contactForm.reset();
+      }, 100);
+    });
+  }
+});

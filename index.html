@@ -365,10 +365,7 @@
         <div class="contact-content">
           <div class="contact-details">
             <h3>Direct Contact</h3>
-            <p>
-              <i class="fas fa-envelope"></i> Email:
-              globalpath@abdullahventures.com
-            </p>
+            <p><i class="fas fa-envelope"></i> Email: globalpath@info.com</p>
             <p><i class="fab fa-whatsapp"></i> WhatsApp: +880 1896-318092</p>
             <p>
               <i class="fas fa-map-marker-alt"></i> Office: Suite-342, Level-3,
@@ -377,17 +374,30 @@
           </div>
           <div class="contact-form-container">
             <h3>Send a Quick Inquiry</h3>
-            <form class="contact-form" id="contactForm">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="mailto:azad.jishan2003@gmail.com"
+              method="get"
+              enctype="text/plain"
+            >
+              <input type="text" placeholder="Your Name" name="name" required />
+              <input
+                type="email"
+                placeholder="Your Email"
+                name="email"
+                required
+              />
               <input
                 type="text"
                 placeholder="Subject (e.g., Coal Inquiry)"
+                name="subject"
                 required
               />
               <textarea
                 rows="5"
                 placeholder="Your Message / Requirement Details"
+                name="message"
                 required
               ></textarea>
               <button type="submit" class="cta-button">Submit Inquiry</button>

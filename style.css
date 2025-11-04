@@ -80,6 +80,7 @@ nav {
   height: 55px;
   width: auto;
   transition: transform 0.3s;
+  border-radius: 50%;
 }
 
 .nav-links {
@@ -309,7 +310,7 @@ header.scrolled .menu-toggle {
 
 .map-container {
   position: relative;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 0;
   animation: fadeIn 1s ease 0.4s both;
@@ -868,6 +869,10 @@ footer {
   header.scrolled .nav-links li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
+
+  .stat-box {
+    width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -904,7 +909,7 @@ footer {
 
   .commodity-grid,
   .feature-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
   }
   .commodity-item,
@@ -919,9 +924,11 @@ footer {
   .contact-content {
     flex-direction: column;
     gap: 30px;
+    align-items: center;
   }
   .contact-details,
   .contact-form-container {
     padding: 15px;
+    width: 90vw;
   }
 }
